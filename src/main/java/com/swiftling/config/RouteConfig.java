@@ -18,12 +18,12 @@ public class RouteConfig {
                                 .filter(authHeaderFilter)
                                 .rewritePath("/swiftling-phrase-service/(?<path>.*)", "/${path}"))
                         .uri("lb://swiftling-phrase-service"))
-                .route("user-service", r -> r
-                        .path("/user-service/**")
+                .route("swiftling-user-service", r -> r
+                        .path("/swiftling-user-service/**")
                         .filters(f -> f
                                 .filter(authHeaderFilter)
-                                .rewritePath("/user-service/(?<path>.*)", "/${path}"))
-                        .uri("lb://user-service"))
+                                .rewritePath("/swiftling-user-service/(?<path>.*)", "/${path}"))
+                        .uri("lb://swiftling-user-service"))
                 .build();
 
     }
