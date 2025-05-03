@@ -12,7 +12,8 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableWebFluxSecurity
 public class SecurityConfig {
 
-    private final String[] freeResourceURLs = {"/webjars/**",
+    private final String[] freeResourceURLs = {
+            "/webjars/**",
             "/swagger-ui.html/**",
             "/swagger-ui.html",
             "/swagger-ui/**",
@@ -22,7 +23,10 @@ public class SecurityConfig {
             "/v3/api-docs/**",
             "/api-docs/**",
             "/swiftling-user-service/v3/**",
-            "/swiftling-phrase-service/v3/**"};
+            "/swiftling-phrase-service/v3/**",
+            "/swiftling-quiz-service/v3/**",
+            "/swiftling-stats-service/v3/**"
+    };
 
     @Bean
     public SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http) {
