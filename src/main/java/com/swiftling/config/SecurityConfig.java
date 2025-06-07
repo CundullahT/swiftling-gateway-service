@@ -13,6 +13,8 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 public class SecurityConfig {
 
     private final String[] freeResourceURLs = {
+            "/actuator",
+            "/actuator/**",
             "/webjars/**",
             "/swagger-ui.html/**",
             "/swagger-ui.html",
