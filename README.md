@@ -17,13 +17,14 @@ Ensure the following dependencies are installed and configured:
 ## Environment Variables
 The following environment variables must be set for the application to function properly:
 
-| Variable Name               | Description |
-|-----------------------------|-------------|
-| `KEYCLOAK_SERVICE`          | Base URL of the Keycloak server (e.g., `http://localhost:8080`) |
-| `LOG_TRACE_SERVICE`         | Base URL of the Zipkin server (e.g., `http://localhost:9411`) |
-| `SWIFTLING_CONFIG_SERVICE`  | Base URL of the Spring Cloud Config Server (e.g., `http://localhost:8888`) |
-| `SWIFTLING_DISCOVERY_SERVICE` | Base URL of the Eureka server (e.g., `http://localhost:8761`) |
-| `SWIFTLING_PROFILE`         | Active Spring profile (e.g., `local`, `dev`, `prod`) |
+| Variable Name                 | Description                                                                          |
+|-------------------------------|--------------------------------------------------------------------------------------|
+| `KEYCLOAK_SERVICE`            | Base URL of the Keycloak server (e.g., `http://localhost:8080`)                      |
+| `LOG_TRACE_SERVICE`           | Base URL of the Zipkin server (e.g., `http://localhost:9411`)                        |
+| `SWIFTLING_CONFIG_SERVICE`    | Base URL of the Spring Cloud Config Server (e.g., `http://localhost:8888`)           |
+| `SWIFTLING_DISCOVERY_SERVICE` | Base URL of the Eureka server (e.g., `http://localhost:8761`)                        |
+| `SWIFTLING_PROFILE`           | Active Spring profile (e.g., `local`, `dev`, `prod`)                                 |
+| `ENV`                         | The environment in which the application is running (e.g., `local`, `dev`, `prod`).  |
 
 ## Running the Application
 1. Clone the repository:
@@ -38,6 +39,7 @@ The following environment variables must be set for the application to function 
    export SWIFTLING_CONFIG_SERVICE=your_config_server_url
    export SWIFTLING_DISCOVERY_SERVICE=your_eureka_server_url
    export SWIFTLING_PROFILE=dev
+   export ENV=dev
    ```
    For Windows (Command Prompt):
    ```cmd
@@ -46,6 +48,7 @@ The following environment variables must be set for the application to function 
    set SWIFTLING_CONFIG_SERVICE=your_config_server_url
    set SWIFTLING_DISCOVERY_SERVICE=your_eureka_server_url
    set SWIFTLING_PROFILE=dev
+   set ENV=dev
    ```
 3. Build the project using Maven:
    ```sh
@@ -62,8 +65,10 @@ The following environment variables must be set for the application to function 
 
 ## API Gateway Routing
 The API Gateway routes all requests to microservices registered in Eureka. The requests must include the microservice name in the path, followed by the actual service endpoint. Example:
-- **User Service**: `/swiftling-user-service/api/v1/create`
-- **Phrase Service**: `/swiftling-phrase-service/api/v1/create`
+- **User Service**: `/swiftling-user-service/api/v1/account/signup`
+- **Phrase Service**: `/swiftling-phrase-service/api/v1/phrase/add-phrase`
+- **Quiz Service**: `/swiftling-quiz-service/api/v1/quiz/result`
+- **Stats Service**: `/swiftling-stats-service/api/v1/stats/daily-streak`
 
 ## Swagger API Documentation
 This application provides a consolidated Swagger documentation page that aggregates all microservice API docs:
