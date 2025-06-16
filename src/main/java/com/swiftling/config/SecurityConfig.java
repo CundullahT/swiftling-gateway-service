@@ -27,7 +27,7 @@ public class SecurityConfig {
             "/swiftling-user-service/v3/**",
             "/swiftling-phrase-service/v3/**",
             "/swiftling-quiz-service/v3/**",
-            "/swiftling-stats-service/v3/**"
+            "/swiftling-notification-service/v3/**"
     };
 
     @Bean
