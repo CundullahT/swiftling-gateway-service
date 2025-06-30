@@ -18,10 +18,12 @@ public class CorsHeaderSanitizerFilter implements GlobalFilter, Ordered {
             ServerHttpResponse response = exchange.getResponse();
             HttpHeaders headers = response.getHeaders();
 
-            headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN);
-            headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS);
-            headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS);
-            headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS);
+            headers.clear();
+
+//            headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN);
+//            headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS);
+//            headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS);
+//            headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS);
 
 //            headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://cundi.onthewifi.com:5000");
 //            headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS, "true");
