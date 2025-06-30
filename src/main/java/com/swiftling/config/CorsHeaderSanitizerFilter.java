@@ -23,10 +23,11 @@ public class CorsHeaderSanitizerFilter implements GlobalFilter, Ordered {
             headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS);
             headers.remove(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS);
 
-            headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://cundi.onthewifi.com:5000");
-            headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS, "true");
-            headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS, "*");
-            headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS, "GET,POST,PUT,DELETE,OPTIONS");
+//            headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://cundi.onthewifi.com:5000");
+//            headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS, "true");
+//            headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS, "*");
+//            headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS, "GET,POST,PUT,DELETE,OPTIONS");
+
         }));
     }
 
