@@ -33,7 +33,11 @@ public class SecurityConfig {
             "/swiftling-user-service/v3/**",
             "/swiftling-phrase-service/v3/**",
             "/swiftling-quiz-service/v3/**",
-            "/swiftling-notification-service/v3/**"
+            "/swiftling-notification-service/v3/**",
+            "/swiftling-user-service/api/v1/account/signup",
+            "/swiftling-user-service/api/v1/account/enable",
+            "/swiftling-user-service/api/v1/account/forgot-pass",
+            "/swiftling-user-service/api/v1/account/reset-pass"
     };
 
     @Bean
