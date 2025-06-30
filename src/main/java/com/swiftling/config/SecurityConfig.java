@@ -48,6 +48,7 @@ public class SecurityConfig {
                         .anyExchange().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
                 .cors(corsSpec -> corsSpec.configurationSource(corsConfigurationSource()))
+                .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .build();
 
     }
